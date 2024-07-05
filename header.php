@@ -22,8 +22,42 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'www' ); ?></a>
+<div class="o-CenteredColumn">
+	<!-- <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'www' ); ?></a> -->
+	<header class="c-Masthead">
+		<div class="c-Masthead__content o-Stack o-Stack--split@xxs">
+			<div class="o-Stack__item">
+				<ul class="o-HorizontalList o-HorizontalList--delimited" data-delimiter="/">
+					<li><h1><a href="/"><span class="u-ScreenReaderText">Eduardo Domingos</span></a></h1></li>
+					<li>home</li>
+				</ul>	
+			</div>
+			<div class="o-Stack__item">
+				<!-- pesquisar aqui um componente de switch enable/disable c-Switcher com a variação c-Switcher--compact com breakpoints -->
+				<button class="c-Button">Menu</button>
+			</div>
+		</div>
+
+		<div class="c-Masthead__menu-collapsible c-Masthead__menu-collapsible--is-collapsed c-Card">
+			<div class="o-Stack o-Stack--split@xxs c-Card__content">
+				<div class="o-Stack__item o-Stack__item--half@xxs">
+					<p>Informação</p>
+					<ul class="o-Stack o-Stack--medium">
+						<li class="o-Stack--item"><a href="#">Bio</a></li>
+					</ul>
+				</div><!-- .o-Stack__item -->
+				<div class="o-Stack__item o-Stack__item--half@xxs">
+					<p>Navegar</p>
+					<ul class="o-Stack o-Stack--medium">
+						<li class="o-Stack--item"><a href="#">Blog</a></li>
+					</ul>
+				</div><!-- .o-Stack__item -->
+			</div><!-- .o-Stack -->
+		</div><!-- .c-Masthead__menu-collapsible -->
+	</header><!-- .c-Masthead -->
+
+
+
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
