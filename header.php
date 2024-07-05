@@ -57,6 +57,23 @@
 	</header><!-- .c-Masthead -->
 
 
+	<div class="c-HighlightBoard">
+		<div class="c-HighlightBoard__content">
+			<div class="o-Stack">
+				<div class="o-Stack__item">
+					<p class="u-mb">Eduardo Domingos</p>
+					<p class="u-mb">Front End Developer</p>
+					<p class="u-mb">Gosto de escrever sobre Front End Development e coisas aleatórias que, muito provavelmente, ninguém quer saber.</p>
+				</div>
+				<div class="o-Stack__item">
+					<a href="" class="c-Button">Bio</a>
+				</div>
+			</div>			
+		</div>
+	</div>
+
+
+
 
 
 	<header id="masthead" class="site-header">
