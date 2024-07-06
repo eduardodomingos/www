@@ -24,29 +24,26 @@
 <?php wp_body_open(); ?>
 <div class="o-CenteredColumn">
 	<!-- <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'www' ); ?></a> -->
-	<header class="c-Masthead">
-		<div class="c-Masthead__content o-Stack o-Stack--split@xxs">
-			<div class="o-Stack__item">
-				<ul class="o-HorizontalList o-HorizontalList--delimited" data-delimiter="/">
-					<li><h1><a href="/"><span class="u-ScreenReaderText">Eduardo Domingos</span></a></h1></li>
-					<li>home</li>
-				</ul>	
-			</div>
-			<div class="o-Stack__item">
-				<!-- pesquisar aqui um componente de switch enable/disable c-Switcher com a variação c-Switcher--compact com breakpoints -->
+	<header class="c-Masthead o-Box u-phn">
+		<div class="u-flex u-flex-jsb">
+			<ul class="o-HorizontalList o-HorizontalList--delimited" data-delimiter="/">
+				<li><h1><a href="/"><span class="u-ScreenReaderText">Eduardo Domingos</span></a></h1></li>
+				<li>home</li>
+			</ul>
+			<div class="u-flex">
 				<button class="c-Button">Menu</button>
 			</div>
 		</div>
 
-		<div class="c-Masthead__menu-collapsible c-Masthead__menu-collapsible--is-collapsed c-Card">
-			<div class="o-Stack o-Stack--split@xxs c-Card__content">
-				<div class="o-Stack__item o-Stack__item--half@xxs">
+		<div class="c-Masthead__navigation c-Masthead__navigation--is-collapsed c-Card o-Box">
+			<div class="o-Stack o-Stack--split@s">
+				<div class="o-Stack__item o-Stack__item--half@s">
 					<p>Informação</p>
 					<ul class="o-Stack o-Stack--medium">
 						<li class="o-Stack--item"><a href="#">Bio</a></li>
 					</ul>
 				</div><!-- .o-Stack__item -->
-				<div class="o-Stack__item o-Stack__item--half@xxs">
+				<div class="o-Stack__item o-Stack__item--half@s">
 					<p>Navegar</p>
 					<ul class="o-Stack o-Stack--medium">
 						<li class="o-Stack--item"><a href="#">Blog</a></li>
@@ -56,23 +53,56 @@
 		</div><!-- .c-Masthead__menu-collapsible -->
 	</header><!-- .c-Masthead -->
 
-
 	<div class="c-HighlightBoard">
-		<div class="c-HighlightBoard__content">
+		<div class="c-HighlightBoard__content o-Stack">
+			<div class="o-Stack__item">
+				<p class="u-mbs">Eduardo Domingos</p>
+				<p class="u-mbm">Front End Developer</p>
+				<p>Gosto de escrever sobre Front End Development e coisas aleatórias que, muito provavelmente, ninguém quer saber.</p>
+			</div><!-- .o-Stack__item -->
+			<div class="o-Stack__item o-Stack o-Stack--medium o-Stack--split@xs">
+				<a href="" class="c-Button c-Button--full@s o-Stack__item">Bio</a>
+			</div><!-- .o-Stack__item -->
+		</div><!-- c-HighlightBoard__content -->
+	</div><!-- .c-HighlightBoard -->
+
+	<div class="o-Stack">
+		<div class="o-Stack__item">
 			<div class="o-Stack">
-				<div class="o-Stack__item">
-					<p class="u-mb">Eduardo Domingos</p>
-					<p class="u-mb">Front End Developer</p>
-					<p class="u-mb">Gosto de escrever sobre Front End Development e coisas aleatórias que, muito provavelmente, ninguém quer saber.</p>
+				<div class="o-Stack__item o-Stack o-Stack--split@xs">
+					<h2 class="o-Stack__item">Últimos Artigos</h2>
+					<div class="o-Stack__item u-flex">
+						<a href="#" class="">Ver todos</a>
+					</div>
 				</div>
 				<div class="o-Stack__item">
-					<a href="" class="c-Button">Bio</a>
+					<ul class="o-VerticalList o-VerticalList--delimited">
+						<li class="o-Box u-phn">
+							<a href=""><h3>Afinal devo usar px, em ou rem?</h3> <time>Jun 2024</time></a>
+						</li>
+					</ul>
 				</div>
-			</div>			
+			</div>
+		</div>
+		<div class="o-Stack__item">
+			<div class="o-Stack">
+				<h2 class="o-Stack__item">Bucket Lists</h2>
+				<ul class="o-Stack__item o-List o-List--bare o-Grid o-Grid--large">
+					<li class="o-Grid__item">
+						<a href="" class="c-Card o-Stack">
+							<h2 class="o-Stack__item">Receitas</h2>
+							<p class="o-Stack__item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia rerum pariatur accusantium, quasi temporibus nostrum quo eveniet adipisci corporis vel vero odit nam ex corrupti harum maxime. Deleniti, minima quo.</p>
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 
-
+	<footer class="c-Footer o-Box u-phn u-flex u-flex--jsb">
+		<small>© 2010 - 2024 / Eduardo Domingos</small>
+		<a href="#">Ver fonte</a>
+	</footer>
 
 
 
