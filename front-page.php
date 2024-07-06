@@ -14,43 +14,52 @@
 
 get_header();
 ?>
+	<main>
+		<div class="o-Stack">
+			<div class="o-Stack__item">
+				<div class="o-Stack">
+					<div class="o-Stack__item u-flex u-flex--jsb">
+						<h2>Últimos Artigos</h2>
+						<a href="<?php echo esc_url(get_permalink(get_option('page_for_posts')));?>" class="c-Button">Ver todos</a>
+					</div>
+					<div class="o-Stack__item">
+						<?php
+                            $args = array(
+                                'post_type'         => 'post',
+                                'posts_per_page'    => 6,
+                            );
 
-	<main id="primary" class="site-main">
-		<?php
-		if ( have_posts() ) :
+                            $query = new WP_Query( $args );
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-	</main><!-- #main -->
-
+                            if( $query->have_posts() ) {
+                                echo '<ul class="o-VerticalList o-VerticalList--delimited">';
+                                while( $query->have_posts() ) {
+                                    $query->the_post();
+                                    echo '<li class="o-VerticalList__item o-Box u-phn">';
+                                    www_get_template_part( 'template-parts/content', get_post_format() );
+                                    echo '</li>';
+                                }
+                                wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
+                                echo '</ul>';
+                            }
+                        ?>
+					</div>
+				</div>
+			</div>
+			<div class="o-Stack__item">
+				<div class="o-Stack">
+					<h2 class="o-Stack__item">Bucket Lists</h2>
+					<!-- <ul class="o-Stack__item o-List o-List--bare o-Grid o-Grid--large">
+						<li class="o-Grid__item">
+							<a href="" class="c-Card o-Stack">
+								<h2 class="o-Stack__item">Receitas</h2>
+								<p class="o-Stack__item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia rerum pariatur accusantium, quasi temporibus nostrum quo eveniet adipisci corporis vel vero odit nam ex corrupti harum maxime. Deleniti, minima quo.</p>
+							</a>
+						</li>
+					</ul> -->
+				</div>
+			</div>
+		</div>
+	</main>
 <?php
-get_sidebar();
 get_footer();
