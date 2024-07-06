@@ -7,6 +7,16 @@
  * @package www
  */
 
+if ( ! function_exists( 'www_is_homepage' ) ) :
+	/**
+	 * Returns true if is homepage.
+	 */
+	function www_is_homepage() {
+		return (is_front_page()) ? true : false;
+		
+	}
+endif;
+
 if ( ! function_exists( 'www_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.

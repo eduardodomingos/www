@@ -49,7 +49,8 @@ function www_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'www' ),
+			'menu-information' => esc_html__( 'Information', 'www' ),
+			'menu-browse' => esc_html__( 'Browse', 'www' ),
 		)
 	);
 
