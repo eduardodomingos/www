@@ -7,13 +7,19 @@
  * @package www
  */
 
-if ( ! function_exists( 'www_is_homepage' ) ) :
+if ( ! function_exists( 'www_copyright_date' ) ) :
 	/**
-	 * Returns true if is homepage.
+	 * Prints the copyright date.
 	 */
-	function www_is_homepage() {
-		return (is_front_page()) ? true : false;
-		
+	function www_copyright_date() {
+		$current_year = date('Y');
+		$oldest_post_year = www_get_oldest_post_year();
+		if ($oldest_post_year && ($oldest_post_year !== $current_year)) {
+			echo "$oldest_post_year - $current_year";
+			return;
+		}
+		echo $current_year;
+
 	}
 endif;
 
@@ -160,16 +166,5 @@ if ( ! function_exists( 'www_post_thumbnail' ) ) :
 
 			<?php
 		endif; // End is_singular().
-	}
-endif;
-
-if ( ! function_exists( 'wp_body_open' ) ) :
-	/**
-	 * Shim for sites older than 5.2.
-	 *
-	 * @link https://core.trac.wordpress.org/ticket/12563
-	 */
-	function wp_body_open() {
-		do_action( 'wp_body_open' );
 	}
 endif;

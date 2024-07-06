@@ -151,19 +151,19 @@ function www_scripts() {
 add_action( 'wp_enqueue_scripts', 'www_scripts' );
 
 /**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Functions which enhance the theme by hooking into WordPress.
+ * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . '/inc/extras.php';
+
+/**
+ * Theme Hooks.
+ */
+require get_template_directory() . '/inc/hooks.php';
 
 /**
  * Customizer additions.
