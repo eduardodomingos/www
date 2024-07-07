@@ -40,11 +40,11 @@
 		<div class="c-Masthead__navigation c-Masthead__navigation--is-collapsed c-Card o-Box">
 			<div class="o-Stack o-Stack--split@s">
 				<div class="o-Stack__item o-Stack__item--half@s">
-					<p>Informação</p>
+					<p><?php echo www_get_menu_name_by_location('primary-left'); ?></p>
 					<?php
 					wp_nav_menu(
 						array(
-							'theme_location' => 'menu-information',
+							'theme_location' => 'primary-left',
 							'menu_class'     => 'o-Stack o-Stack--medium',
 							'container'      => false,
 							'items_wrap'     => '<ul class="%2$s">%3$s</ul>'
@@ -53,12 +53,14 @@
 					?>
 				</div>
 				<div class="o-Stack__item o-Stack__item--half@s">
-					<p>Navegar</p>
+					<p><?php echo www_get_menu_name_by_location('primary-right'); ?></p>
 					<?php
 					wp_nav_menu(
 						array(
-							'theme_location' => 'menu-browse',
-							'menu_id'        => 'primary-menu',
+							'theme_location' => 'primary-right',
+							'menu_class'     => 'o-Stack o-Stack--medium',
+							'container'      => false,
+							'items_wrap'     => '<ul class="%2$s">%3$s</ul>'
 						)
 					);
 					?>

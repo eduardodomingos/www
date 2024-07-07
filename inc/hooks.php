@@ -40,7 +40,7 @@ add_action( 'wp_head', 'www_pingback_header' );
  * Add css classes to list <li>'s, based on menu location.
  */
 function www_menu_classes($classes, $item, $args) {
-	if($args->theme_location == 'menu-information' || $args->theme_location == 'menu-browse') {
+	if(strpos($args->theme_location, 'primary') === 0) {
 		$classes = ['o-Stack__item'];
 	}
 	return $classes;
@@ -51,7 +51,7 @@ add_filter('nav_menu_css_class', 'www_menu_classes', 1, 3);
  * Remove id from list <li>'s, based on menu location.
  */
 function www_menu_item_id($classes, $item, $args) {
-	if($args->theme_location == 'menu-information' || $args->theme_location == 'menu-browse') {
+	if(strpos($args->theme_location, 'primary') === 0) {
 		return null;
 	}
 }

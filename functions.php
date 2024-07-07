@@ -49,8 +49,9 @@ function www_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-information' => esc_html__( 'Information', 'www' ),
-			'menu-browse' => esc_html__( 'Browse', 'www' ),
+			'primary-left' => esc_html__( 'Primary Left', 'www' ),
+			'primary-right' => esc_html__( 'Primary Right', 'www' ),
+			'bucket-list' => esc_html__( 'Bucket List', 'www' ),
 		)
 	);
 
@@ -164,6 +165,11 @@ require get_template_directory() . '/inc/extras.php';
  * Theme Hooks.
  */
 require get_template_directory() . '/inc/hooks.php';
+
+/**
+ * Theme Hooks.
+ */
+require get_template_directory() . '/inc/walkers/bucket-list-menu-walker.php';
 
 /**
  * Customizer additions.

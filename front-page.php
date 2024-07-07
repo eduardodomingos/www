@@ -51,15 +51,18 @@ get_header();
 			</div>
 			<div class="o-Stack__item">
 				<div class="o-Stack">
-					<h2 class="o-Stack__item">Bucket Lists</h2>
-					<!-- <ul class="o-Stack__item o-List o-List--bare o-Grid o-Grid--large">
-						<li class="o-Grid__item">
-							<a href="" class="c-Card o-Stack">
-								<h2 class="o-Stack__item">Receitas</h2>
-								<p class="o-Stack__item">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia rerum pariatur accusantium, quasi temporibus nostrum quo eveniet adipisci corporis vel vero odit nam ex corrupti harum maxime. Deleniti, minima quo.</p>
-							</a>
-						</li>
-					</ul> -->
+					<h2 class="o-Stack__item">Bucket List</h2>
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' 	=> 'bucket-list',
+							'menu_class'     	=> 'o-Stack__item o-List o-List--bare o-Grid o-Grid--large',
+							'container'      	=> false,
+							'items_wrap'     	=> '<ul class="%2$s">%3$s</ul>',
+							'walker'			=> new Bucket_List_Menu_Walker()
+						)
+					);
+					?>
 				</div>
 			</div>
 		</div>

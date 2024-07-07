@@ -58,3 +58,33 @@ if ( ! function_exists( 'www_get_template_part' ) ) :
 		include locate_template( $file );
 	}
 endif;
+
+
+if ( ! function_exists( 'www_get_menu_name_by_location' ) ) :
+	/**
+	 * Get the menu name assigned to a specific location
+	 * @return string
+	 */
+	// Function to 
+	function www_get_menu_name_by_location($location) {
+		// Get the array of menu locations and their assigned menu IDs
+		$locations = get_nav_menu_locations();
+
+		// Check if the specified location exists in the array
+		if (isset($locations[$location])) {
+			// Get the menu ID for the specified location
+			$menu_id = $locations[$location];
+
+			// Get the menu object by menu ID
+			$menu_object = wp_get_nav_menu_object($menu_id);
+
+			// Return the menu name
+			if ($menu_object) {
+				return $menu_object->name;
+			}
+		}
+
+		// Return false if the location does not exist or no menu is assigned
+		return false;
+	}
+endif;
