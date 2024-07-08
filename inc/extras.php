@@ -63,9 +63,7 @@ endif;
 if ( ! function_exists( 'www_get_menu_name_by_location' ) ) :
 	/**
 	 * Get the menu name assigned to a specific location
-	 * @return string
 	 */
-	// Function to 
 	function www_get_menu_name_by_location($location) {
 		// Get the array of menu locations and their assigned menu IDs
 		$locations = get_nav_menu_locations();
