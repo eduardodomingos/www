@@ -15,6 +15,14 @@
 get_header();
 ?>
 	<main>
+		<?php
+		www_get_template_part( 'template-parts/content', 'hero', array( 
+			'title'			=> get_field('hero_title'),
+			'tagline'		=> get_field('hero_tagline'),
+			'description'	=> get_field('hero_description'),
+			'ctas'			=> get_field('hero_ctas')
+		));
+		?>
 		<div class="o-Stack">
 			<div class="o-Stack__item">
 				<div class="o-Stack">
