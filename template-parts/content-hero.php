@@ -1,5 +1,5 @@
 <?php if($title) :?>
-    <div class="c-Hero o-Stack">
+    <div class="<?php echo $cssClass ? $cssClass .' ' : ''; ?>c-Hero o-Stack">
         <div class="o-Stack_item">
             <p class="u-mbs"><?php echo $title; ?></p>
             <?php if($tagline) :?>
