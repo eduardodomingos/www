@@ -24,7 +24,7 @@ get_header();
 		));
 		?>
 		<div class="o-Stack">
-			<div class="o-Stack__item">
+			<section class="o-Stack__item">
 				<div class="o-Stack">
 					<div class="o-Stack__item u-flex u-flex--jsb">
 						<h2>Últimos Artigos</h2>
@@ -56,8 +56,8 @@ get_header();
                         ?>
 					</div>
 				</div>
-			</div>
-			<div class="o-Stack__item">
+			</section>
+			<section class="o-Stack__item">
 				<div class="o-Stack">
 					<h2 class="o-Stack__item">Bucket List</h2>
 					<?php
@@ -72,7 +72,7 @@ get_header();
 					);
 					?>
 				</div>
-			</div>
+			</section>
 		</div>
 	</main>
 <?php
