@@ -14,47 +14,46 @@
 
 get_header();
 ?>
-	<main>
+	<main class="o-Stack">
 		<?php
 		www_get_template_part( 'template-parts/content', 'hero', array( 
 			'title'			=> get_field('hero_title'),
 			'tagline'		=> get_field('hero_tagline'),
 			'description'	=> get_field('hero_description'),
-			'ctas'			=> get_field('hero_ctas')
+			'ctas'			=> get_field('hero_ctas'),
+			'cssClass'		=> 'o-Stack__item'
 		));
 		?>
-		<div class="o-Stack">
+		<div class="o-Stack__item o-Stack">
 			<section class="o-Stack__item">
 				<div class="o-Stack">
 					<div class="o-Stack__item u-flex u-flex--jsb">
 						<h2>Últimos Artigos</h2>
 						<a href="<?php echo esc_url(get_permalink(get_option('page_for_posts')));?>" class="c-Button">Ver todos</a>
 					</div>
-					<div class="o-Stack__item">
-						<?php
-                            $args = array(
-                                'post_type'         => 'post',
-                                'posts_per_page'	=> 6,
-								'category_name'  	=> 'front-end',
-								'order'          	=> 'DESC',
-								'orderby'        	=> 'date'
-                            );
+					<?php
+						$args = array(
+							'post_type'         => 'post',
+							'posts_per_page'	=> 6,
+							'category_name'  	=> 'front-end',
+							'order'          	=> 'DESC',
+							'orderby'        	=> 'date'
+						);
 
-                            $query = new WP_Query( $args );
+						$query = new WP_Query( $args );
 
-                            if( $query->have_posts() ) {
-                                echo '<ul class="o-VerticalList o-VerticalList--delimited">';
-                                while( $query->have_posts() ) {
-                                    $query->the_post();
-                                    echo '<li class="o-VerticalList__item o-Box u-phn">';
-                                    www_get_template_part( 'template-parts/content', get_post_format() );
-                                    echo '</li>';
-                                }
-                                wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
-                                echo '</ul>';
-                            }
-                        ?>
-					</div>
+						if( $query->have_posts() ) {
+							echo '<ul class="o-Stack__item o-VerticalList o-VerticalList--delimited">';
+							while( $query->have_posts() ) {
+								$query->the_post();
+								echo '<li class="o-VerticalList__item o-Box u-phn">';
+								www_get_template_part( 'template-parts/content', get_post_format() );
+								echo '</li>';
+							}
+							wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
+							echo '</ul>';
+						}
+					?>
 				</div>
 			</section>
 			<section class="o-Stack__item">
