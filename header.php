@@ -31,7 +31,7 @@
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="u-ScreenReaderText"><?php bloginfo( 'name' ); ?></span></a>
 					</<?php echo www_is_homepage() ? 'h1' : 'p'; ?>>
 				</li>
-				<li><?php echo strtolower(get_the_title()); ?></li>
+				<li>pensar melhor isto</li>
 			</ul>
 			<div class="u-flex">
 				<button class="c-Button"><?php esc_html_e( 'Menu', 'www' ); ?></button>
