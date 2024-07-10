@@ -10,10 +10,10 @@
 ?>
 
 <li class="o-Grid__item">
-	<a href="<?php echo esc_url($category_link);?>" class="c-Card o-Stack">
-		<h3 class="o-Stack__item"><?php echo esc_html($category_name);?></h3>
-		<?php if(!empty($category_description)): ?>
-			<p class="o-Stack__item"><?php echo esc_html($category_description);?></p>
+	<a href="<?php echo esc_url($link);?>" class="c-Card o-Stack">
+		<h3 class="o-Stack__item"><?php echo esc_html($title);?></h3>
+		<?php if($description): ?>
+			<p class="o-Stack__item"><?php echo esc_html($description);?></p>
 		<?php endif; ?>
 	</a>
 </li>
