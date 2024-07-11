@@ -9,43 +9,38 @@
 
 get_header();
 ?>
-
-	<main id="primary" class="site-main">
-
+	<main class="o-Stack">
 		<?php if ( have_posts() ) : ?>
+			<h1 class="o-Stack__item"><?php echo post_type_archive_title( '', false );?></h1>
+			
+			<?php $post_types_with_filter = array('recipes', 'restaurant');?>
+			<?php foreach ($post_types_with_filter as $post_type) :?>
+				<?php if(is_post_type_archive($post_type)): ?>
+					<div class="o-Stack__item c-TaxonomyFilters">
+						<?php do_action('show_beautiful_filters'); ?>
+					</div>
+					<?php break; ?>
+				<?php endif;?>	
+			<?php endforeach;?>	
 
-			<header class="page-header">
+			<section class="o-Stack__item o-Stack">
+				<ul class="o-Stack__item o-VerticalList o-VerticalList--delimited">
 				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
+				/* Start the Loop */
+				while ( have_posts() ) :
+					the_post(); ?>
+					<li class="o-Box u-phn">
+						<?php www_get_template_part( 'template-parts/content', get_post_format() );?>
+					</li>
+				<?php
+				endwhile;?>
+				</ul>
+			</section>
+		<?php
 		else :
-
 			get_template_part( 'template-parts/content', 'none' );
-
 		endif;
 		?>
-
-	</main><!-- #main -->
-
+	</main>
 <?php
-get_sidebar();
 get_footer();
